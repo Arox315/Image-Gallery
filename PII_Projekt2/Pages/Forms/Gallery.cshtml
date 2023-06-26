@@ -1,0 +1,39 @@
+﻿@page
+@model PII_Projekt2.Pages.Forms.GaleryModel
+@section Styles{
+    <link rel="stylesheet" href="~/css/GalleryStyle0.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+@{
+    ViewData["Title"] = "Przeglądaj";
+}
+
+@if (Model.GalleryList.Count() > 0)
+{
+<div class="box">
+    @foreach (var item in Model.GalleryList)
+    {
+        @if (item.Description != null)
+        {
+            <div class="image">
+                <img class="gimg" src="data:image/jpg; base64,@(Convert.ToBase64String(System.IO.File.ReadAllBytes(item.ImagePath)))" alt="" />
+                <div class="att_name"><label>@item.Name</label></div>
+                <div class="desc">@item.Description</div>
+            </div>
+        }
+        else
+        {
+            <div class="image_no_desc">
+                <img class="gimg" src="data:image/jpg; base64,@(Convert.ToBase64String(System.IO.File.ReadAllBytes(item.ImagePath)))" alt="" />
+                <div class="att_name"><label>@item.Name</label></div>
+            </div>
+        }
+    }
+</div>
+}
+else
+{
+    <h1 style="text-align:center;padding-top:60px">Brak elementów w galerii</h1>
+}
+
+

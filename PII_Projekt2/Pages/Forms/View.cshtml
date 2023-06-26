@@ -1,0 +1,51 @@
+﻿@page
+@model PII_Projekt2.Pages.Forms.ViewModel
+@section Styles{
+    <link rel="stylesheet" href="~/css/ViewStyle.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+@{
+    ViewData["Title"] = "Zarządzaj";
+}
+
+<div style="position:relative">
+    <a class="tooltipx" asp-page="/Forms/Create">
+        <img src="~/assets/newbg.png" alt="" height="60" width="60" style="position:absolute"/>
+        <img class="addpng" src="~/assets/newfg.png" alt="" height="60" width="60" style="position:absolute"/>
+        <span class="tooltiptext">Dodaj</span>
+    </a>
+</div>
+
+<form method="post" style="position:relative; top:70px">
+
+    @if (Model.GalleryList.Count() > 0)
+    {
+        <table width="100%">
+            @foreach (var item in Model.GalleryList)
+            {
+                <tr>
+                    <td>
+                        <img class="thumbnail" src="data:image/jpg; base64,@(Convert.ToBase64String(System.IO.File.ReadAllBytes(item.ImagePath)))" alt="" width="110" height="60" />
+                    </td>
+                    <td style="text-align:center">
+                        @item.Name
+                    </td>
+                    <td style="text-align:right">
+                        <a class="tooltipx" asp-page="/Forms/Modify" asp-route-id="@item.Id">
+                            <img src="/assets/mod.png" alt="" width="60" height="60" />
+                            <span class="tooltiptextup">Edytuj</span>
+                        </a>
+                        <button type="submit" asp-page-handler="Delete" asp-route-id="@item.Id" style="background-color:transparent; border-color:transparent" class="tooltipx">
+                            <img src="/assets/del.png" alt="" width="60" height="60" />
+                            <span class="tooltiptextup">Usuń</span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <h1 style="text-align:center">Brak elementów w galerii.</h1>
+    }
+</form>

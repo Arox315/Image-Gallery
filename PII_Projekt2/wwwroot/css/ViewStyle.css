@@ -1,0 +1,91 @@
+﻿.addpng:hover {
+    position: relative;
+    top: -5px;
+    left: -5px;
+    width: 70px;
+    height: auto;
+    display: block;
+    z-index: 999;
+}
+
+table {
+    border: 3px solid #0094ff;
+    background-color: aliceblue;
+}
+
+table tr {
+    border: 2px solid #808080;
+}
+
+table td {
+    font-size: 18px;
+    color: #2891D5;
+}
+
+.thumbnail{
+    border: 1px solid #000000;
+}
+
+.tooltipx {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipx .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #0885D3;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+    top: 12px;
+    right: -190px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltipx:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltipx .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #0885D3 transparent transparent;
+}
+
+.tooltipx .tooltiptextup {
+    visibility: hidden;
+    width: 120px;
+    background-color: #0885D3;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltipx:hover .tooltiptextup {
+    visibility: visible;
+}
+
+.tooltipx .tooltiptextup::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #0885D3 transparent transparent transparent;
+}

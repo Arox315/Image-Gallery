@@ -1,0 +1,68 @@
+﻿@page
+@model PII_Projekt2.Pages.Forms.ModifyModel
+@section Styles{
+   
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/CMStyle1.css" />
+}
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<br />
+<h3 style="text-align:center"> Edytuj element galerii </h3>
+<br />
+
+<form method="post" enctype="multipart/form-data">
+    <table width="100%">
+        <tr>
+            <td width="25%">
+                <label>Nazwa:</label>
+            </td>
+            <td>
+                <input asp-for="Gallery.Name" autocomplete="off" />
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <label>Opis:</label>
+            </td>
+            <td>
+                <textarea maxlength="320" cols="100" rows="5" placeholder="Max 320 znaków" asp-for="Gallery.Description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="25%"></td>
+            <td>
+                @if (Model.Gallery.ImagePath != null)
+                {
+                    <img src="data:image/jpg; base64,@(Convert.ToBase64String(Model.filebytes))" width="100%" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <label>Zdjęcie:</label>
+            </td>
+            <td>
+                <input type="file" asp-for="PhotoFile" />
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+            </td>
+            <td style="text-align:right">
+                <input type="submit" value="Zapisz" class="mybtn subbtn" />
+                <a asp-page="/Forms/View" class="mybtn cancelbtn">Anuluj</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@if (ViewData["Message"] != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewData["Message"]");
+            };
+    </script>
+}

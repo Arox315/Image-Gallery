@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@section Styles{
+    <link rel="stylesheet" href="~/css/IndexStyle.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+@section OptionalSection{
+    <footer class="footer text-center">
+        <div class="container">
+            &copy; 2022 - Artur Życzyński - s101527
+        </div>
+    </footer>
+ }
+@{
+    ViewData["Title"] = "Strona główna";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="~/js/change_bg.js"></script>
+<script>$('#background_cycler').hide();</script>
+<div id="background_cycler">
+    <div class="active" style="background-image: url('Assets/brama-brandenburska.jpg');"></div>
+    <div class="" style="background-image: url('Assets/krzywa-wieza.jpg');"></div>
+    <div class="" style="background-image: url('Assets/las.jpg');"></div>
+    <div class="" style="background-image: url('Assets/wieza-eiffla.jpg');"></div>
+    <div class="" style="background-image: url('Assets/palac-kultury.png');"></div>
+    <div class="" style="background-image: url('Assets/amsterdam.jpg');"></div>
+    <div class="" style="background-image: url('Assets/morskie-oko.jpg');"></div>
+</div>
+
+<div class="text-center main_text">
+    <h1>Witaj!</h1>
+    <p>Oto twoja galeria.</p>
+</div>
+

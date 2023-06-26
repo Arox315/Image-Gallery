@@ -1,0 +1,51 @@
+﻿#background_cycler {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#background_cycler div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-size: cover;
+	background-position: center center;
+}
+
+#background_cycler div.active{
+	z-index: 3;
+}
+
+.navbar{
+	background-color:rgb(255 255 255/95%);
+}
+
+.main_text {
+	font-family: serif;
+	padding-top: 10%;
+	color: white;
+	text-shadow: 0px 0px 10px #000000, 0px 0px 5px #2891D5;
+}
+
+.main_text h1{
+	font-size: 70px;
+}
+
+.main_text p{
+	font-size: 50px;
+}
+
+footer{
+	font-size: 18px;
+	font-weight: 700;
+	-webkit-text-stroke: 1px black;
+	color: white;
+}

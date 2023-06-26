@@ -1,0 +1,67 @@
+﻿.image_no_desc {
+    margin: 10px;
+    height: 230px;
+    border: 1px solid #9c9c9c;
+    float: left;
+    width: 320px;
+    background-color: aliceblue;
+}
+
+    .image_no_desc:hover {
+        border: 1px solid #0885D3;
+    }
+
+.image {
+    margin: 10px;
+    height: 230px;
+    border: 1px solid #9c9c9c;
+    float: left;
+    width: 320px;
+    background-color: aliceblue;
+}
+
+    .image:hover {
+        border: 1px solid #0885D3;
+    }
+
+.gimg {
+    width: 100%;
+    height: 180px;
+}
+
+.image:hover .gimg {
+    display: none;
+}
+
+.image:hover .desc {
+    display: block;
+}
+
+.att_name {
+    text-align: center;
+}
+
+.image:hover .att_name {
+    height: 40px;
+}
+
+.att_name label {
+    padding: 10px;
+    text-align: center;
+    font-family: serif;
+    font-size: 18px;
+    color: #2891D5;
+}
+
+.desc {
+    font-size: 15px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    display: none;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
